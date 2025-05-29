@@ -62,5 +62,12 @@ return {
         session_lens = { load_on_setup = true },
       }
     end,
-  }
+  },
+  {
+    "petertriho/nvim-scrollbar",
+    lazy = false,
+    config = function()
+      require("scrollbar").setup()
+    end,
+  },
 }

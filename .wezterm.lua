@@ -23,19 +23,19 @@ config.window_padding = {
 
 config.enable_tab_bar = false  -- Hide tab bar
 
-config.window_background_opacity = 0.98
-config.background = {
-  {
-	source = {Color="black"},
-	width = "100%",
-	height = "100%",
-	opacity = 0.8,
-  },
-  {
-    source = { File = "/home/khacson/background-image.png" },
-    opacity = 0.1,
-  }
-}
+--config.window_background_opacity = 0.98
+--config.background = {
+--  {
+--	source = {Color="black"},
+--	width = "100%",
+--	height = "100%",
+--	opacity = 0.8,
+--  },
+--  {
+--    source = { File = "/home/khacson/background-image.png" },
+--    opacity = 0.1,
+--  }
+--}
 
 config.keys = {
   {key = "Z", mods = "CTRL", action = wezterm.action.EmitEvent("toggle-tabbar")}
@@ -68,3 +68,4 @@ end)
 
 -- Finally, return the configuration to wezterm:
 return config
+
