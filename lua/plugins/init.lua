@@ -27,6 +27,7 @@ return {
   },
   {
     "ahmedkhalf/project.nvim",
+    lazy = false,
     config = function()
       require("project_nvim").setup({
         datadir = vim.fn.stdpath("data") .. "/site/projects",
@@ -35,6 +36,7 @@ return {
         exclude_dirs = {},
         change_detection_methods = { "lsp", "pattern" },
       })
+      require("telescope").load_extension("projects")
     end,
   },
   {
