@@ -1,3 +1,4 @@
+require("configs.commands")
 return {
   defaults = { lazy = true },
   install = { colorscheme = { "nvchad" } },
