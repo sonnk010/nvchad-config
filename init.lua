@@ -21,7 +21,6 @@ require("lazy").setup({
     branch = "v2.5",
     import = "nvchad.plugins",
   },
-
   { import = "plugins" },
 }, lazy_config)
 
@@ -37,3 +36,7 @@ vim.schedule(function()
 end)
 
 vim.opt.number = true
+vim.opt.wrap = false
+
+-- install ripgrep for searching
+-- install luarocks package manage for Lua
