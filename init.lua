@@ -37,6 +37,7 @@ end)
 
 vim.opt.number = true
 vim.opt.wrap = false
+vim.opt.relativenumber = true
 
 -- install ripgrep for searching
 -- install luarocks package manage for Lua
