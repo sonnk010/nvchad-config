@@ -39,6 +39,7 @@ config.enable_tab_bar = false  -- Hide tab bar
 
 config.keys = {
   {key = "Z", mods = "CTRL", action = wezterm.action.EmitEvent("toggle-tabbar")}
+  {key = "F11", action = wezterm.action.ToggleFullScreen},
 }
 
 wezterm.on(
