@@ -37,7 +37,7 @@ return {
         exclude_dirs = {},
         change_detection_methods = { "lsp", "pattern" },
       }
-      require("telescope").load_extension("projects")
+      require("telescope").load_extension "projects"
     end,
   },
   {
@@ -49,7 +49,7 @@ return {
         hide_if_all_visible = true,
         set_highlight = true,
         handlers = {
-          cursor = fasle,
+          cursor = false,
           diagnostic = true,
           gitsigns = true, -- Requires gitsigns
           handle = true,
@@ -112,8 +112,6 @@ return {
           row = 0,
           col = 1,
         },
-      }
-      require("gitsigns").setup {
         on_attach = function(bufnr)
           local gitsigns = require "gitsigns"
 
@@ -191,5 +189,20 @@ return {
       require("scrollbar.handlers.search").setup { -- integrate with nvim-scrollbar
       }
     end,
+  },
+  {
+    "Pocco81/auto-save.nvim",
+    lazy = false,
+    opts = {
+      enabled = true,
+      debounce_delay = 1500,
+    },
+  },
+  {
+    "mbbill/undotree",
+    cmd = "UndotreeToggle",
+    keys = {
+      { "<F5>", "<cmd>UndotreeToggle<CR>", desc = "Toggle Undotree" },
+    },
   },
 }
