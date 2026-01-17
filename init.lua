@@ -42,3 +42,4 @@ vim.opt.relativenumber = true
 -- install ripgrep for searching
 -- install luarocks package manage for Lua
 -- set capslock to ecs: gsettings set org.gnome.desktop.input-sources xkb-options "['caps:escape']"
+-- install magick for display image: wget https://imagemagick.org/archive/binaries/magick

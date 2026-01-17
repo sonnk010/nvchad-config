@@ -21,9 +21,7 @@ end, {})
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
     if vim.fn.argc() == 0 then
-      vim.defer_fn(function()
-        vim.cmd("SessionLoad")
-      end, 100)
+      require("persisted").load()
     end
   end,
 })
