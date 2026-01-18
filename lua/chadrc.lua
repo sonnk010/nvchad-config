@@ -22,7 +22,23 @@ M.base46 = {
 M.ui = {
     tabufline = {
         lazyload = false
-    }
+    },
+    statusline = {
+        modules = {
+            --get relative file path
+            file = function()
+                local utils = require("nvchad.stl.utils")
+                local x = utils.file()
+
+                local relpath = vim.fn.expand("%:.")
+                if relpath == "" then
+                    return ""
+                end
+
+                return "%#StText# " .. x[1] .. " " .. relpath .. " "
+            end,
+        },
+   },
 }
 
 return M
