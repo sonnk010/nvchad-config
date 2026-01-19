@@ -27,6 +27,13 @@ M.ui = {
         modules = {
             --get relative file path
             file = function()
+                local buftype = vim.bo.buftype
+                local filetype = vim.bo.filetype
+
+                if buftype == "terminal" or filetype == "NvimTree" then
+                    return ""
+                end
+
                 local utils = require("nvchad.stl.utils")
                 local x = utils.file()
 
