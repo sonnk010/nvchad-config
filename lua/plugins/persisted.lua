@@ -15,6 +15,23 @@ local plugins = {
           vim.notify "No existing session to load."
         end,
       }
+
+      local api = require "nvim-tree.api"
+
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "PersistedSavePre",
+        callback = function()
+          api.tree.close()
+        end,
+      })
+
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "PersistedLoadPost",
+        callback = function()
+          api.tree.toggle({ focus = false, find_file = true })
+        end,
+      })
+
       require("telescope").load_extension "persisted"
       require("telescope").setup {
         extensions = {
