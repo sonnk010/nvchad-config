@@ -33,7 +33,6 @@ M.ui = {
                 if buftype == "terminal" or filetype == "NvimTree" then
                     return ""
                 end
-
                 local utils = require("nvchad.stl.utils")
                 local x = utils.file()
 
