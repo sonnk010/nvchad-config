@@ -37,7 +37,13 @@ end)
 
 vim.opt.number = true
 vim.opt.wrap = false
-vim.opt.relativenumber = true
+
+-- UFO folding
+vim.opt.foldcolumn = "1"
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true
+vim.opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
 -- install ripgrep for searching
 -- install luarocks package manage for Lua
