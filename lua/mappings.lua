@@ -36,6 +36,25 @@ vim.api.nvim_set_keymap("n", "<Leader>l", "<Cmd>noh<CR>", kopts)
 -- telescope
 map("n", "<leader>fp", "<cmd>Telescope projects<CR>", { noremap = true, silent = true })
 
+-- List current changes (staged, unstaged, untracked)
+map("n", "<leader>fgs", "<cmd>Telescope git_status<CR>", { noremap = true, desc = "Telescope: Git status" })
+
+-- List project-wide commit history
+map("n", "<leader>fgc", "<cmd>Telescope git_commits<CR>", { noremap = true, desc = "Telescope: Git commits" })
+
+-- List and switch between git branches
+map("n", "<leader>fgb", "<cmd>Telescope git_branches<CR>", { noremap = true, desc = "Telescope: Git branches" })
+
+-- List commit history for the current buffer (file)
+map("n", "<leader>fgh", "<cmd>Telescope git_bcommits<CR>", { noremap = true, desc = "Telescope: Git buffer commits" })
+
+-- List all files tracked by git
+map("n", "<leader>fgf", "<cmd>Telescope git_files<CR>", { noremap = true, desc = "Telescope: Git files" })
+
+-- List stashed changes
+map("n", "<leader>fgt", "<cmd>Telescope git_stash<CR>", { noremap = true, desc = "Telescope: Git stash" })
+
+
 vim.keymap.set("n", "<leader>fm", function()
   require("conform").format { lsp_fallback = true }
 end, { desc = "Format code with conform.nvim" })
