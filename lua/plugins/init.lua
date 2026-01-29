@@ -140,6 +140,7 @@ return {
 
           -- Actions
           map("n", "<leader>gs", gitsigns.stage_hunk, { desc = "Stage current hunk" })
+          map("n", "<leader>gu", gitsigns.undo_stage_hunk, { desc = "Undo stage hunk" })
           map("n", "<leader>gr", gitsigns.reset_hunk, { desc = "Reset current hunk" })
 
           map("v", "<leader>gs", function()
@@ -151,6 +152,7 @@ return {
           end, { desc = "Reset selected hunks in visual mode" })
 
           map("n", "<leader>gS", gitsigns.stage_buffer, { desc = "Stage entire buffer" })
+          map("n", "<leader>gU", gitsigns.reset_buffer_index, { desc = "Unstage entire buffer" })
           map("n", "<leader>gR", gitsigns.reset_buffer, { desc = "Reset entire buffer" })
           map("n", "<leader>gp", gitsigns.preview_hunk, { desc = "Preview current hunk" })
           map("n", "<leader>gi", gitsigns.preview_hunk_inline, { desc = "Preview current hunk inline" })
