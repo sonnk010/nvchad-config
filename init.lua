@@ -49,3 +49,6 @@ vim.opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 -- install luarocks package manage for Lua
 -- set capslock to ecs: gsettings set org.gnome.desktop.input-sources xkb-options "['caps:escape']"
 -- install magick for display image: wget https://imagemagick.org/archive/binaries/magick
+-- install lazygit: https://github.com/jesseduffield/lazygit/tree/master?tab=readme-ov-file#installation
+-- setup git config --global core.editor "nvim" - to prevent opening GNU nano editor in nvim
+
