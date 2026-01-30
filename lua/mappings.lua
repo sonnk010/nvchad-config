@@ -65,8 +65,8 @@ local function close_other_buffers()
 
   for _, buf in ipairs(buffers) do
     if buf ~= current and vim.api.nvim_buf_is_loaded(buf) then
-      local ft = vim.api.nvim_buf_get_option(buf, "filetype")
-      local bt = vim.api.nvim_buf_get_option(buf, "buftype")
+      local ft = vim.api.nvim_get_option_value("filetype", { buf = buf })
+      local bt = vim.api.nvim_get_option_value("buftype", { buf = buf })
 
       -- just delete normal buffer, except terminal, tree
       local skip_filetypes = { "NvimTree", "neo-tree" }
