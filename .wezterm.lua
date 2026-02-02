@@ -38,7 +38,7 @@ config.enable_tab_bar = false  -- Hide tab bar
 --}
 
 config.keys = {
-  {key = "Z", mods = "CTRL", action = wezterm.action.EmitEvent("toggle-tabbar")}
+  {key = "Z", mods = "CTRL", action = wezterm.action.EmitEvent("toggle-tabbar")},
   {key = "F11", action = wezterm.action.ToggleFullScreen},
 }
 
@@ -57,7 +57,7 @@ wezterm.on(
     end
 )
 
-wezterm.on("format-window-title", function(tab, pane, tabs, panes, config)
+wezterm.on("format-window-title", function(tab, pane)
   local process = pane.foreground_process_name
 
   if process:find("nvim") then
