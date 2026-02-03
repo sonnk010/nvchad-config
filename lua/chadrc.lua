@@ -9,7 +9,7 @@ M.base46 = {
     theme = "catppuccin",
     theme_toggle = {
         "catppuccin",
-        "github_light"
+        "catppuccin-latte",
     },
     --transparency = true,
     -- hl_override = {
