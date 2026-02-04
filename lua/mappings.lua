@@ -84,3 +84,39 @@ end
 
 vim.keymap.set("n", "<C-w>O", close_other_buffers, { noremap = true, silent = true, desc = 'Close all other buffers except current' })
 
+local function smart_find_files()
+  local path
+  local ok, api = pcall(require, "nvim-tree.api")
+  
+  -- Check if in nvim-tree
+  if ok and vim.bo.filetype == "NvimTree" then
+    local node = api.tree.get_node_under_cursor()
+    if not node then return end
+    path = node.type == "directory" and node.absolute_path or vim.fn.fnamemodify(node.absolute_path, ":h")
+  else
+  -- Neither get current folder
+    path = vim.fn.expand("%:p:h")
+  end
+
+  require("telescope.builtin").find_files({ cwd = path, prompt_title = "Find Files in " .. path })
+end
+
+-- Same with Live Grep (find word)
+local function smart_live_grep()
+  local path
+  local ok, api = pcall(require, "nvim-tree.api")
+  
+  if ok and vim.bo.filetype == "NvimTree" then
+    local node = api.tree.get_node_under_cursor()
+    if not node then return end
+    path = node.type == "directory" and node.absolute_path or vim.fn.fnamemodify(node.absolute_path, ":h")
+  else
+    path = vim.fn.expand("%:p:h")
+  end
+
+  require("telescope.builtin").live_grep({ search_dirs = { path }, prompt_title = "Grep in " .. path })
+end
+
+
+vim.keymap.set("n", "<leader>fd", smart_find_files, { desc = "Find files in smart dir" })
+vim.keymap.set("n", "<leader>fe", smart_live_grep, { desc = "Grep in smart dir" })
