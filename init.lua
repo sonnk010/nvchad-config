@@ -51,4 +51,5 @@ vim.opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 -- install magick for display image: wget https://imagemagick.org/archive/binaries/magick
 -- install lazygit: https://github.com/jesseduffield/lazygit/tree/master?tab=readme-ov-file#installation
 -- setup git config --global core.editor "nvim" - to prevent opening GNU nano editor in nvim
+-- for jdtls with old java version ex: 17. Fix in https://github.com/mason-org/mason.nvim/issues/1826#issuecomment-2621118063
 
