@@ -17,15 +17,6 @@ vim.api.nvim_create_user_command("CopyRelativePath", function()
   vim.notify("Copied relative path: " .. rel_path)
 end, {})
 
--- Autocmd to run :SessionLoad on startup (only when no file args)
-vim.api.nvim_create_autocmd("VimEnter", {
-  callback = function()
-    if vim.fn.argc() == 0 then
-      require("persisted").load()
-    end
-  end,
-})
-
 -- Prevent open new buffer when start
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()

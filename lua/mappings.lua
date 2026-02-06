@@ -12,7 +12,6 @@ map("i", "<C-Y>", "<C-X><C-Y>")
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
 -- hlslens keymap
-require("hlslens").setup()
 local kopts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap(
   "n",

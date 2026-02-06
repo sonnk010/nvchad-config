@@ -11,7 +11,7 @@ return {
     {
       "<leader>tX",
       "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-      esc = "Buffer Diagnostics (Trouble)",
+      desc = "Buffer Diagnostics (Trouble)",
     },
     {
       "<leader>cs",
