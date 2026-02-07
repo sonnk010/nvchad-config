@@ -53,6 +53,7 @@ map("n", "<leader>fgf", "<cmd>Telescope git_files<CR>", { noremap = true, desc =
 -- List stashed changes
 map("n", "<leader>fgt", "<cmd>Telescope git_stash<CR>", { noremap = true, desc = "Telescope: Git stash" })
 
+map("n", "<leader>fr", "<cmd>Telescope resume<CR>", { noremap = true, desc = "Telescope: Resume last search" })
 
 vim.keymap.set("n", "<leader>fm", function()
   require("conform").format { lsp_fallback = true }
@@ -119,3 +120,4 @@ end
 
 vim.keymap.set("n", "<leader>fd", smart_find_files, { desc = "Find files in smart dir" })
 vim.keymap.set("n", "<leader>fe", smart_live_grep, { desc = "Grep in smart dir" })
+

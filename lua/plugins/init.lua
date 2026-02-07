@@ -208,4 +208,25 @@ return {
       { "<F5>", "<cmd>UndotreeToggle<CR>", desc = "Toggle Undotree" },
     },
   },
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = function()
+      local conf = require "nvchad.configs.telescope"
+
+      conf.defaults = conf.defaults or {}
+      conf.defaults.mappings = conf.defaults.mappings or {}
+      conf.defaults.mappings.i = conf.defaults.mappings.i or {}
+
+      conf.defaults.history = {
+        path = vim.fn.stdpath "data" .. "/telescope_history",
+        limit = 100,
+      }
+
+      local actions = require "telescope.actions"
+      conf.defaults.mappings.i["<S-Up>"] = actions.cycle_history_prev
+      conf.defaults.mappings.i["<S-Down>"] = actions.cycle_history_next
+
+      return conf
+    end,
+  },
 }
