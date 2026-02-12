@@ -45,6 +45,10 @@ vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
 vim.opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
+vim.keymap.set("n", "<leader>ra", function()
+  return ":IncRename " .. vim.fn.expand("<cword>")
+end, { expr = true })
+
 -- install ripgrep for searching
 -- install luarocks package manage for Lua
 -- set capslock to ecs: gsettings set org.gnome.desktop.input-sources xkb-options "['caps:escape']"
