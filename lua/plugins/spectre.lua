@@ -15,6 +15,4 @@ return {
     require("spectre").setup()
   end,
 }
--- some comment
--- Some code
--- and some pice
+
