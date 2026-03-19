@@ -64,7 +64,7 @@ local function close_other_buffers()
   local buffers = vim.api.nvim_list_bufs()
 
   for _, buf in ipairs(buffers) do
-    if buf ~= current and vim.api.nvim_buf_is_loaded(buf) then
+    if buf ~= current and vim.fn.buflisted(buf) == 1 then
       local ft = vim.api.nvim_get_option_value("filetype", { buf = buf })
       local bt = vim.api.nvim_get_option_value("buftype", { buf = buf })
 
