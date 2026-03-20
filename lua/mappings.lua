@@ -55,6 +55,9 @@ map("n", "<leader>fgt", "<cmd>Telescope git_stash<CR>", { noremap = true, desc =
 
 map("n", "<leader>fr", "<cmd>Telescope resume<CR>", { noremap = true, desc = "Telescope: Resume last search" })
 
+-- Using picker instead of quickfix
+map('n', 'grr', require('telescope.builtin').lsp_references, {})
+
 vim.keymap.set("n", "<leader>fm", function()
   require("conform").format { lsp_fallback = true }
 end, { desc = "Format code with conform.nvim" })
