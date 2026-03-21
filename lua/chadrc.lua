@@ -21,7 +21,12 @@ M.base46 = {
 -- M.nvdash = { load_on_startup = true }
 M.ui = {
     tabufline = {
-        lazyload = false
+        lazyload = false,
+        order = {
+          "treeOffset",
+          "buffers",
+          "tabs",
+        }
     },
     statusline = {
         modules = {
@@ -48,6 +53,10 @@ M.ui = {
    telescope = {
      style = "bordered"
    }
+}
+
+M.cheatsheet = {
+  theme = "simple",
 }
 
 return M
