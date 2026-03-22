@@ -229,4 +229,39 @@ return {
       return conf
     end,
   },
+  {
+    "hrsh7th/nvim-cmp",
+    opts = function()
+      -- Keep NvChad config
+      local conf = require "nvchad.configs.cmp"
+      return conf
+    end,
+    config = function(_, opts)
+      local cmp = require "cmp"
+
+      -- Run origin setup of previous NvChad
+      cmp.setup(opts)
+
+      -- Add cmdline completion
+      cmp.setup.cmdline(":", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = "path" },
+        }, {
+          { name = "cmdline" },
+        }),
+      })
+
+      cmp.setup.cmdline({ "/", "?" }, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = "buffer" },
+        },
+      })
+    end,
+  },
+  {
+    "hrsh7th/cmp-cmdline",
+    event = "CmdlineEnter",
+  },
 }
