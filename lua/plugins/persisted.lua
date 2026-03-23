@@ -33,6 +33,7 @@ local plugins = {
       })
 
       require("telescope").load_extension "persisted"
+      require("telescope").load_extension "live_grep_args"
       require("telescope").setup {
         extensions = {
           persisted = {
