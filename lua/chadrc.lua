@@ -16,6 +16,11 @@ M.base46 = {
   -- 	Comment = { italic = true },
   -- 	["@comment"] = { italic = true },
   -- },
+  hl_override = {
+    NvimTreeCursorLine = {
+      bg = "#25243b",
+    }
+  }
 }
 
 -- M.nvdash = { load_on_startup = true }
