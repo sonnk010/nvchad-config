@@ -135,6 +135,6 @@ vim.keymap.set("n", "<leader>fe", smart_live_grep, { desc = "Grep in smart dir" 
 
 vim.schedule(function()
   vim.api.nvim_set_hl(0, "NvimTreeCursorLine", {
-    bg = "#3a3950",
+    bg = "#25243b",
   })
 end)
