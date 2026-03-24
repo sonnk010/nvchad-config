@@ -1,18 +1,18 @@
 -- Copy commands
 vim.api.nvim_create_user_command("CopyFilename", function()
-  local filename = vim.fn.expand("%:t")
+  local filename = vim.fn.expand "%:t"
   vim.fn.setreg("+", filename)
   vim.notify("Copied filename: " .. filename)
 end, {})
 
 vim.api.nvim_create_user_command("CopyAbsolutePath", function()
-  local abs_path = vim.fn.expand("%:p")
+  local abs_path = vim.fn.expand "%:p"
   vim.fn.setreg("+", abs_path)
   vim.notify("Copied absolute path: " .. abs_path)
 end, {})
 
 vim.api.nvim_create_user_command("CopyRelativePath", function()
-  local rel_path = vim.fn.expand("%:.")
+  local rel_path = vim.fn.expand "%:."
   vim.fn.setreg("+", rel_path)
   vim.notify("Copied relative path: " .. rel_path)
 end, {})
@@ -20,8 +20,17 @@ end, {})
 -- Prevent open new buffer when start
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
-    if vim.fn.argc() == 0 and vim.fn.bufname("%") == "" and vim.bo.filetype == "" then
-      vim.cmd("bwipeout")
+    if vim.fn.argc() == 0 and vim.fn.bufname "%" == "" and vim.bo.filetype == "" then
+      vim.cmd "bwipeout"
+    end
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufDelete", {
+  callback = function()
+    local bufs = vim.t.bufs
+    if #bufs == 1 and vim.api.nvim_buf_get_name(bufs[1]) == "" then
+      vim.cmd "Nvdash"
     end
   end,
 })
