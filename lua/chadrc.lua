@@ -6,9 +6,9 @@
 local M = {}
 
 M.base46 = {
-  theme = "onedark",
+  theme = "catppuccin",
   theme_toggle = {
-    "onedark",
+    "catppuccin",
     "catppuccin-latte",
   },
   --transparency = true,
