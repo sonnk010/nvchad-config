@@ -2,7 +2,7 @@ return {
   "3rd/image.nvim",
   lazy = false,
   opts = {
-    backend = "sixel",
+    backend = "kitty",
     processor = "magick_cli",
   },
 }
